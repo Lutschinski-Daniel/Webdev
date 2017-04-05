@@ -5,13 +5,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class IndexController extends Controller
+class AboutController extends Controller
 {
     /**
-     * @Route ("/", name="home")
+     * @Route ("/about", name="about")
      */
-    public function indexAction()
+    public function aboutAction()
     {
-        return $this->render('index.html.twig');
+        return $this->render('about.html.twig');
     }
 }
