@@ -4,6 +4,10 @@
     Welcome to Symfony!
 {% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+    
 {% block body %}
     <h1>I'm Daniel, and this is my site!</h1>
     I'll keep you updated on stuff I am working on and also my learning progress.<br>

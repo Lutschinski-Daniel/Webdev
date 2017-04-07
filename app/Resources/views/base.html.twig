@@ -2,16 +2,29 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <title>{% block title %}Webdev by Lu{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+        {% endblock %}
+        <!-- INCLUDE BOOTSTRAP -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link type="text/javascript" src="js/index.js"></script>
     </head>
     <body>
-        {{ include('content.html.twig')}}
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div class="wrapper" id="body">    
+            {{ include('navbar.html.twig')}}
+            <div id="content">
+                {% block body %}{% endblock %}
+                {% block javascripts %}{% endblock %}
+            </div>
+        </div>
     </body>
-    <footer>
+    <footer id="footer" class="wrapper">
         &copy Lutschinski 2017
     </footer>
 </html>
