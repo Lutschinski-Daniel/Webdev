@@ -118,7 +118,27 @@ html, body {
 }
 
 #footer {
+    clear: both;
     background-color: black;
     color: white;  
     padding: 20px 0px;
+}
+
+.vocab {
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    background-color: green; 
+    color: wheat;
+    float: left;
+    margin: 10px;
+}
+
+#projectDiv {
+    float: left;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    background-color: orange; 
+    margin: 10px;
 }

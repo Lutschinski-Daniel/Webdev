@@ -23,28 +23,28 @@ class Vocab {
     /**
      * @ORM\Column(type="string", length=32)
      */
-    private $german;
+    private $germanV;
     
     /**
      * @ORM\Column(type="string", length=32)
      */
-    private $foreign;
+    private $foreignV;
     
-    public function __construct($german, $foreign) {
-        $this->setForeign($foreign);
-        $this->setGerman($german);
+    public function __construct($germanV, $foreignV) {
+        $this->setForeign($foreignV);
+        $this->setGerman($germanV);
     }
             
     function setId($id) {
         $this->id = $id;
     }
 
-    function setGerman($german) {
-        $this->german = $german;
+    function setGerman($germanV) {
+        $this->germanV = $germanV;
     }
 
-    function setForeign($foreign) {
-        $this->foreign = $foreign;
+    function setForeign($foreignV) {
+        $this->foreignV = $foreignV;
     }
 
     function getId() {
@@ -52,12 +52,10 @@ class Vocab {
     }
 
     function getGerman() {
-        return $this->german;
+        return $this->germanV;
     }
 
     function getForeign() {
-        return $this->foreign;
+        return $this->foreignV;
     }
-
-
 }
