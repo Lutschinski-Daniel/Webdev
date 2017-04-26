@@ -4,5 +4,18 @@
     <h1>Here are some vocabs that might be usefull to you! ;)</h1>
     {% for vocab in vocabs %}
         <div class="vocab">{{ vocab.german }}</div>
-    {% endfor%}    
+    {% endfor%}  
+    <br>
+    <div id="newVocab">Add new Vocab!
+        <form id="vocabForm" action="{{ path('create') }}">
+            German:<input type="text" name="german"><br>
+            Foreign: <input type="text" name="foreign">
+            <br>
+            <input type="submit" value="Add">
+        </form> 
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/index.js') }}"></script>
 {% endblock %}

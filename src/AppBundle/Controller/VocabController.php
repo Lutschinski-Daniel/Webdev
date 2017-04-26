@@ -25,9 +25,14 @@ class VocabController extends Controller {
      */
     public function createVocabAction() {
         $em = $this->getDoctrine()->getManager();
-        $ger = "Käse9";
-        $for = "cheese";
+ 
+        $ger = filter_input(INPUT_GET, 'german');
+        $for = filter_input(INPUT_GET, 'foreign');
 
+        if(empty($ger) || empty($for) ){
+            return $this->redirectToRoute('vocabs');
+        }
+        
          /** @var $vocab Vocab */
         $vocab = new Vocab($ger, $for);
 

@@ -13,10 +13,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link type="text/javascript" src="js/index.js"></script>
     </head>
     <body>
-        <div class="wrapper" id="body">    
+        <div  id="body" class="wrapper">    
             {{ include('navbar.html.twig')}}
             <div id="content">
                 {% block body %}{% endblock %}
@@ -24,7 +23,7 @@
             </div>
         </div>
     </body>
-    <footer id="footer" class="wrapper">
+    <footer id="footer"  class="wrapper">
         &copy Lutschinski 2017
     </footer>
 </html>

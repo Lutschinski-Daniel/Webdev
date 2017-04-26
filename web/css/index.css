@@ -142,3 +142,16 @@ html, body {
     background-color: orange; 
     margin: 10px;
 }
+
+div#newVocab {
+    background-color: yellow; 
+    color: black;
+    float: left;
+    margin: 10px;
+    border-style: dotted;
+    border-color: green;
+}
+
+#vocabForm {
+    visibility: hidden;
+}
