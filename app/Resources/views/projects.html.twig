@@ -2,5 +2,14 @@
 
 {% block body %}
     <h1>I'm working on different topics! Pick one you want more details about! :)</h1>
-    <div id="projectDiv"><a href='{{ path('vocabs') }}'>Learn vocabs!</a><div>
+    <!-- <div class="projectDiv" urlTo="{{ path('vocabs') }}">Learn vocabs!<div> -->
+    {% for project in projects %}
+        <div class="projectDiv" urlTo="{{ path(project.urlTo) }}">
+            {{ project.name }}
+        </div>
+    {% endfor%}         
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/index.js') }}"></script>
 {% endblock %}

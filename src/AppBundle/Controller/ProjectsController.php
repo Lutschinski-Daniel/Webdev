@@ -12,6 +12,14 @@ class ProjectsController extends Controller
      */
     public function projectsAction()
     {
-        return $this->render('projects.html.twig');
+        // all existing projects
+        $projects = [
+            ['name' => 'Learn vocabs!', 'urlTo' => 'vocabs'],
+            ['name' => 'See songs!', 'urlTo' => 'songs'] 
+        ];
+        
+        return $this->render('projects.html.twig', [
+            'projects' => $projects
+        ]);
     }
 }
