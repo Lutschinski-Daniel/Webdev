@@ -171,6 +171,15 @@ div#newVocab {
     z-index: 1;
 }
 
-#flashDiv.show{
-    visibility: visible;
+#iconLink {
+    float: right;
+}
+
+#copyRight {
+    float: left;
+}
+
+img#login{
+    width: 16px;
+    height: 16px;
 }

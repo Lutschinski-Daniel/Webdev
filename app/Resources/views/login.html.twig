@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <a href="{{ path('register') }}">Register!</a>
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/index.js') }}"></script>
+{% endblock %}

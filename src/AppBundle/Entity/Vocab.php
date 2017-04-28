@@ -47,15 +47,15 @@ class Vocab {
         $this->foreignV = $foreignV;
     }
 
-    function getId() {
+    public function getId() {
         return $this->id;
     }
 
-    function getGerman() {
+    public function getGerman() {
         return $this->germanV;
     }
 
-    function getForeign() {
+    public function getForeign() {
         return $this->foreignV;
     }
 }
