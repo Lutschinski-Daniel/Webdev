@@ -43,6 +43,12 @@ class VocabController extends Controller {
         $em->persist($vocab);
         $em->flush();
 
+        // notice to user
+        $this->addFlash(
+            'notice',
+            'New Vocab created!'
+        );
+        
         return $this->redirectToRoute('vocabs');
     }
 }

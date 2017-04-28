@@ -157,3 +157,20 @@ div#newVocab {
 #vocabForm {
     visibility: hidden;
 }
+
+#flashDiv {
+    position: fixed;
+    bottom: 150px;
+    left: 45%;
+    background-color:  #e4e4e4;
+    border-style: solid;
+    border-color: #b6b6b6;
+    padding: 16px;
+    border-radius: 4px;
+    text-align: center;
+    z-index: 1;
+}
+
+#flashDiv.show{
+    visibility: visible;
+}

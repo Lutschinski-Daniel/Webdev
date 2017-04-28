@@ -16,6 +16,16 @@
             <input type="submit" value="Add">
         </form> 
     </div>
+    
+    {# Toast erstellen nach Vocabelerstellung #}
+    {% for flash_message in app.session.flashBag.get('notice') %}
+        <div id="flashDiv">{{ flash_message }}</div>
+    {% endfor %}
+    <script>
+        $("#flashDiv").delay(2000).fadeOut(1000).promise(function(){
+           $("#flashDiv").remove();
+        });
+    </script>
 {% endblock %}
 
 {% block javascripts %}

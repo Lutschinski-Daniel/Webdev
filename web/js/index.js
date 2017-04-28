@@ -7,9 +7,13 @@ $( "div#newVocab" ).one( 'click', function() {
 $("div.vocab").click(function(){
     $visLang = $(this).html();
     $invisLang = $(this).attr("langInv");
- 
-    $(this).text($invisLang);
-    $(this).attr("langInv", $visLang);
+    
+    // create effect
+    $(this).fadeOut(300).promise().done(function(){
+        $(this).text($invisLang);
+        $(this).attr("langInv", $visLang);
+        $(this).fadeIn(300);
+    });
 });
 
 // open link for project-site that is clicked on
