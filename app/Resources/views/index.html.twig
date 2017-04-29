@@ -4,4 +4,14 @@
     <h1>I'm Daniel, and this is my site!</h1>
     I'll keep you updated on stuff I am working on and also my learning progress.<br>
     More to come. ;)
+    
+    {# Toast erstellen nach erfolgreichem login #}
+    {% for flash_message in app.session.flashBag.get('notice') %}
+        <div id="flashLog">{{ flash_message }}</div>
+    {% endfor %}
+    <script>
+        $("#flashLog").delay(1250).fadeOut(1000).promise(function(){
+           $("#flashLog").remove();
+        });
+    </script>
 {% endblock %}

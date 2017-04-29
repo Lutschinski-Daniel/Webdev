@@ -5,9 +5,12 @@
         <group>
             <file>file:/C:/xampp/htdocs/Symfony/app/Resources/views/vocabs.html.twig</file>
             <file>file:/C:/xampp/htdocs/Symfony/app/Resources/views/base.html.twig</file>
-            <file>file:/C:/xampp/htdocs/Symfony/app/Resources/views/projects.html.twig</file>
-            <file>file:/C:/xampp/htdocs/Symfony/app/Resources/views/index.html.twig</file>
-            <file>file:/C:/xampp/htdocs/Symfony/src/AppBundle/Controller/VocabController.php</file>
+            <file>file:/C:/xampp/htdocs/Symfony/web/js/index.js</file>
+            <file>file:/C:/xampp/htdocs/Symfony/src/AppBundle/Controller/LoginController.php</file>
+            <file>file:/C:/xampp/htdocs/Symfony/app/Resources/views/login.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Symfony/app/Resources/views/navbar.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Symfony/app/Resources/views/register.html.twig</file>
+            <file>file:/C:/xampp/htdocs/Symfony/web/css/index.css</file>
         </group>
     </open-files>
 </project-private>

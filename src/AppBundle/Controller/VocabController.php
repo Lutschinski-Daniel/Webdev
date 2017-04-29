@@ -32,11 +32,11 @@ class VocabController extends Controller {
         $ger = $request->query->get('german');
         $for = $request->query->get('foreign');
 
-        if(empty($ger) || empty($for) ){
+        if( empty($ger) || empty($for) ){
             return $this->redirectToRoute('vocabs');
         }
         
-         /** @var $vocab Vocab */
+        /** @var $vocab Vocab */
         $vocab = new Vocab($ger, $for);
 
         $em = $this->getDoctrine()->getManager();

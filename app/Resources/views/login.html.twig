@@ -6,6 +6,16 @@
     {{ form_widget(form) }}
     <a href="{{ path('register') }}">Register!</a>
     {{ form_end(form) }}
+    
+    {# Toast erstellen nach erfolgreicher Registrierung #}
+    {% for flash_message in app.session.flashBag.get('notice') %}
+        <div id="flashLog">{{ flash_message }}</div>
+    {% endfor %}
+    <script>
+        $("#flashLog").delay(1250).fadeOut(1000).promise(function(){
+           $("#flashLog").remove();
+        });
+    </script>
 {% endblock %}
 
 {% block javascripts %}

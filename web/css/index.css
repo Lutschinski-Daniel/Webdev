@@ -171,6 +171,20 @@ div#newVocab {
     z-index: 1;
 }
 
+#flashLog {
+    position: fixed;
+    top: 200px;
+    left: 45%;
+    background-color:  #e4e4e4;
+    border-style: solid;
+    border-color: #b6b6b6;
+    padding: 16px;
+    border-radius: 4px;
+    text-align: center;
+    z-index: 1;
+    opacity: 0.7;
+}
+
 #iconLink {
     float: right;
 }
@@ -180,6 +194,6 @@ div#newVocab {
 }
 
 img#login{
-    width: 16px;
-    height: 16px;
+    width: 32px;
+    height: 32px;
 }

@@ -10,45 +10,44 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
-
-class LoginController extends Controller {
+class RegisterController extends Controller {
     
-     /**
-     * @Route ("/login", name="login")
+    /**
+     * @Route ("/register", name="register")
      */
-    public function loginAction(Request $request){
-        
-        // TODO testen ob user schon angemeldet ist. Falls ja, Optionen/Logout anzeigen.
-        // Falls nein, form anzeigen.
-        
+    public function registerAction(Request $request){
         $user = new User();
         
         $form = $this->createFormBuilder($user)
             ->add('name', TextType::class)
             ->add('password', PasswordType::class)
-            ->add('save', SubmitType::class, array('label' => 'Login'))
+            ->add('save', SubmitType::class, array('label' => 'Register'))
             ->getForm();
         
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) {
             
-            $user = $form->getData();
             $repository = $this->getDoctrine()->getRepository('AppBundle:User');
             
-            //check for valid user and password from db
+            // check if user name already exists
+            
+            $em = $this->getDoctrine()->getManager();
             $userTmp = $repository->findOneBy(array('name' => $form->get('name')->getData()));
+           
+            if( empty($userTmp) ){
+                $user = $form->getData();
+                $em->persist($user);
+                $em->flush();
             
-            if( $userTmp->getPassword() == $user->getPassword() ){
-            
-                // notice to user that he is logged in
+                // notice to user that he is now registered
                 $this->addFlash(
                     'notice',
-                    'Welcome back! You are logged in now.'
+                    'Welcome! You are now registered. Login if you\'d like.'
                 );
-        
-                return $this->render('index.html.twig');
+                return $this->redirectToRoute('login');
             }
+            // add "else" "Username already used!
         }
 
         return $this->render('login.html.twig', [
