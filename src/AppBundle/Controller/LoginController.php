@@ -39,7 +39,7 @@ class LoginController extends Controller {
             //check for valid user and password from db
             $userTmp = $repository->findOneBy(array('name' => $form->get('name')->getData()));
             
-            if( $userTmp->getPassword() == $user->getPassword() ){
+            if( !empty($userTmp) && ( $userTmp->getPassword() == $user->getPassword() ) ){
             
                 // notice to user that he is logged in
                 $this->addFlash(
