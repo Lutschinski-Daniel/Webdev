@@ -21,12 +21,14 @@
             {{ include('navbar.html.twig')}}
             <div id="content">
                 {% block body %}{% endblock %}
-                {% block javascripts %}{% endblock %}
             </div>
         </div>
-        <footer id="footer"  class="wrapper navbar-fixed-bottom">
+        <footer id="footer"  class="navbar-fixed-bottom">
             <div id="copyRight">&copy Lutschinski 2017</div>
             <div id="iconLink"><a target="_blank" href="https://icons8.com/web-app/14082/Contacts">Contacts icon credits</a><div>
         </footer>
+        {% block javascripts %}
+            <script src="{{ asset('js/index.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
