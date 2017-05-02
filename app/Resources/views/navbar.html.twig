@@ -1,12 +1,22 @@
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-        <li><a href='{{ path('home') }}'>Home</a></li>
-        <li><a href='{{ path('about') }}'>About me</a></li>
-        <li><a href='{{ path('projects') }}'>Projects</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-        <li><a href='{{ path('login') }}'>Login &nbsp<i class="fa fa-gear"></i></img></a></li>
-    </ul>
-  </div>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href='{{ path('home') }}'><span class="glyphicon glyphicon-home"></span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href='{{ path('home') }}'>Home</a></li>
+                <li><a href='{{ path('about') }}'>About me</a></li>
+                <li><a href='{{ path('projects') }}'>Projects</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href='{{ path('login') }}'>Login &nbsp<i class="fa fa-gear"></i></img></a></li>
+            </ul>
+        </div>
+    </div>
 </nav>
