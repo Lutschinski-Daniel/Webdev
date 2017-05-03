@@ -102,11 +102,6 @@ html, body {
     margin: 0;
 }
 
-.wrapper {
-    width: 85%;
-    margin: 0 auto;
-}
-
 #body{
     margin: auto;
     min-height: 100%; 
@@ -201,4 +196,8 @@ img#login{
 
 div.form-padd{
     padding-top: 150px;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none;
 }
