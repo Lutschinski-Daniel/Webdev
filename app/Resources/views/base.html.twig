@@ -17,12 +17,18 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body class="container-fluid">
-        <div  id="body">    
+        <section  id="body">    
             {{ include('navbar.html.twig')}}
             <div id="content">
-                {% block body %}{% endblock %}
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
+                        {% block body %}{% endblock %}
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
             </div>
-        </div>
+        </section>
         <footer id="footer"  class="navbar-fixed-bottom">
             <div id="copyRight">&copy Lutschinski 2017</div>
             <div id="iconLink"><a target="_blank" href="https://icons8.com/web-app/14082/Contacts">Contacts icon credits</a><div>

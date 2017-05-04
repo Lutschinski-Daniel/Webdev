@@ -95,6 +95,16 @@ input, select {
     vertical-align:middle;
 }
 
+<!-- Makes calculation width and height of elements easier -->
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 <!-- My CSS -->
 
 html, body {
@@ -107,10 +117,7 @@ html, body {
     min-height: 100%; 
     height: auto !important; 
     padding-top: 50px;
-}
-
-#content {
-    padding: 0 0 10px 10px;
+    margin-bottom: 55px;
 }
 
 #footer {
@@ -126,28 +133,30 @@ html, body {
     height: 100px;
     width: 100px;
     text-align: center;
-    background-color: green; 
-    color: wheat;
+    background-color: #81c784; 
     float: left;
     margin: 10px;
+    padding: 10px;
 }
 
 .projectDiv {
     float: left;
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     text-align: center;
-    background-color: orange; 
+    background-color: #ffe082; 
     margin: 10px;
+    padding: 10px;
 }
 
-div#newVocab {
-    background-color: yellow; 
+#newVocab {
+    background-color: #ffffb3; 
     color: black;
     float: left;
     margin: 10px;
     border-style: dotted;
     border-color: green;
+    padding: 8px;
 }
 
 #vocabForm {
@@ -169,7 +178,7 @@ div#newVocab {
 
 #flashLog {
     position: fixed;
-    top: 200px;
+    top: 150px;
     left: 45%;
     background-color:  #e4e4e4;
     border-style: solid;
@@ -200,4 +209,25 @@ div.form-padd{
 
 .carousel-control.left, .carousel-control.right {
     background-image: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+#carousel-div {
+    margin-top: 50px;
+}
+
+.carousel-inner .carousel-caption h3 {
+    font-size: 40px;
+}
+
+.carousel-inner .carousel-caption span {
+    font-size: 24px;
+    background-color: rgba(0,0,0, .25);
+}
+
+#content h1 {
+    padding-left: 15px; 
 }

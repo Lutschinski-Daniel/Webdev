@@ -24,9 +24,9 @@ $("div.projectDiv").click(function(){
 // make vocab-div darkgreen when users hovers over it
 $("div.vocab").hover(
     function() {
-        $(this).css('background-color', 'darkgreen');
+        $(this).css('background-color', '#519657');
     },
     function(){
-        $(this).css('background-color', 'green');
+        $(this).css('background-color', '#81c784');
     }
 );

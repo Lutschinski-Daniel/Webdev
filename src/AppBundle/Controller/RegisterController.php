@@ -50,7 +50,7 @@ class RegisterController extends Controller {
             // add "else" "Username already used!
         }
 
-        return $this->render('login.html.twig', [
+        return $this->render('register.html.twig', [
             'form' => $form->createView()
         ]);
     }
