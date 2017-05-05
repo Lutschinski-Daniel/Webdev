@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Here are some vocabs that might be usefull to you! ;)</h1>
+    <h1 class="section-heading">Here are some vocabs that might be usefull to you! ;)</h1>
     {% for vocab in vocabs %}
         <div class="vocab" langInv="{{ vocab.foreign }}">
             {{ vocab.german }}

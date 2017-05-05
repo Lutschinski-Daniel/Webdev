@@ -95,7 +95,7 @@ input, select {
     vertical-align:middle;
 }
 
-<!-- Makes calculation width and height of elements easier -->
+/* Makes calculation width and height of elements easier */
 
 *,
 *:before,
@@ -105,7 +105,7 @@ input, select {
           box-sizing: border-box;
 }
 
-<!-- My CSS -->
+/* My CSS */
 
 html, body {
     height: 100%;
@@ -130,8 +130,8 @@ html, body {
 }
 
 .vocab {
-    height: 100px;
-    width: 100px;
+    height: 130px;
+    width: 130px;
     text-align: center;
     background-color: #81c784; 
     float: left;
@@ -230,4 +230,49 @@ a:link {
 
 #content h1 {
     padding-left: 15px; 
+}
+
+/* Media query breakpoints */
+
+@media screen and (max-width: 700px){
+    #carousel-div {
+        margin-top: 30px;
+    }
+    
+    .section-heading {
+        font-size: 32px;
+    }
+    
+    .vocab {
+        height: 105px;
+        width: 105px;
+    }
+}
+
+@media screen and (max-width: 390px){
+    .projectDiv {
+        height: 150px;
+        width: 150px;
+    }
+    
+    .section-heading {
+        font-size: 20px;
+    }
+    
+    .vocab {
+        height: 90px;
+        width: 90px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .vocab {
+        height: 110px;
+        width: 110px;
+    }
+    
+    .projectDiv {
+        height: 120px;
+        width: 240px;
+    }
 }

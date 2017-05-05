@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>I'm working on different topics! Pick one you want more details about! :)</h1>
+    <h1 class="section-heading">I'm working on different topics! Pick one you want more details about! :)</h1>
     <!-- <div class="projectDiv" urlTo="{{ path('vocabs') }}">Learn vocabs!<div> -->
     {% for project in projects %}
         <div class="projectDiv" urlTo="{{ path(project.urlTo) }}">
