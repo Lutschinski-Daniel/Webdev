@@ -38,6 +38,11 @@ class VocabController extends Controller {
         
         /** @var $vocab Vocab */
         $vocab = new Vocab($ger, $for);
+        if( $request->getSession()->has('voccreated') ){
+            $request->getSession()->set('voccreated', $request->getSession()->get('voccreated')+1);
+        } else {
+            $request->getSession()->set('voccreated', 1);
+        }
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($vocab);
@@ -48,6 +53,7 @@ class VocabController extends Controller {
             'notice',
             'New Vocab created!'
         );
+        
         
         return $this->redirectToRoute('vocabs');
     }

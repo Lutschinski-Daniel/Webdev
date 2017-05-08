@@ -15,7 +15,12 @@
                 <li><a href='{{ path('projects') }}'>Projects</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href='{{ path('login') }}'>Login &nbsp<i class="fa fa-gear"></i></img></a></li>
+                {% if app.request.hasPreviousSession and app.session.has('username') %}
+                    <li><a href='{{ path('options') }}'>Optionen</a></li>
+                    <li><a href='{{ path('logout') }}'>Logout &nbsp<i class="fa fa-sign-out"></i></a></li>
+                {% elseif app.request.hasPreviousSession %}
+                    <li><a href='{{ path('login') }}'>Login &nbsp<i class="fa fa-gear"></i></a></li>
+                {% endif%}
             </ul>
         </div>
     </div>

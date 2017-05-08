@@ -6,53 +6,55 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\User;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-
+use AppBundle\Forms\LoginType;
 
 class LoginController extends Controller {
-    
-     /**
+
+    /**
      * @Route ("/login", name="login")
      */
-    public function loginAction(Request $request){
-        
-        // TODO testen ob user schon angemeldet ist. Falls ja, Optionen/Logout anzeigen.
-        // Falls nein, form anzeigen.
-        
+    public function loginAction(Request $request) {
         $user = new User();
-        
-        $form = $this->createFormBuilder($user)
-            ->add('name', TextType::class)
-            ->add('password', PasswordType::class)
-            ->add('save', SubmitType::class, array('label' => 'Login'))
-            ->getForm();
-        
+        $form =  $this->createForm(LoginType::class, $user);
+
         $form->handleRequest($request);
-        
+
         if ($form->isSubmitted() && $form->isValid()) {
-            
+
             $user = $form->getData();
             $repository = $this->getDoctrine()->getRepository('AppBundle:User');
-            
+
             //check for valid user and password from db
             $userTmp = $repository->findOneBy(array('name' => $form->get('name')->getData()));
             
-            if( !empty($userTmp) && ( $userTmp->getPassword() == $user->getPassword() ) ){
-            
+            // user doesn't exist
+            if (empty($userTmp)) {
+                return $this->render('login.html.twig', ['form' => $form->createView()]);
+            }
+            // user does exist, now check for valid pw
+            $valid = password_verify($form->get('password')->getData(), $userTmp->getPassword());
+
+            if ( $valid ) {
+                // user is valid, save in session
+                $session = $request->getSession();
+                $session->set('username', $userTmp->getName());
+                $session->set('user', $userTmp);
+
                 // notice to user that he is logged in
                 $this->addFlash(
-                    'notice',
-                    'Welcome back! You are logged in now.'
+                        'loggedin', 'Welcome ' . $userTmp->getName() . '! You are logged in now.'
                 );
-        
-                return $this->render('index.html.twig');
+                // valid password for user
+                return $this->redirectToRoute('options');
+            } else {
+                // invalid password for user
+                return $this->render('login.html.twig', ['form' => $form->createView()]);
             }
+        // form is not valid    
+        } else {
+            return $this->render('login.html.twig', [
+                        'form' => $form->createView()
+            ]);
         }
-
-        return $this->render('login.html.twig', [
-            'form' => $form->createView()
-        ]);
     }
 }

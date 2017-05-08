@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %} 
+       
+    {# Toast erstellen nach erfolgreichem login #}
+    {% if app.request.hasPreviousSession %}
+        {% for flash_message in app.session.flashBag.get('loggedin') %}
+            <div id="flashLog">{{ flash_message }}</div>
+        {% endfor %}
+        {% for flash_message in app.session.flashBag.get('loggedout') %}
+            <div id="flashLog">{{ flash_message }}</div>
+        {% endfor %}
+        <script>
+            $("#flashLog").delay(2250).fadeOut(1000).promise(function(){
+                $("#flashLog").remove();
+            });
+        </script>
+    {% endif %}
+    
+    <h2>Here you find options considering your account!</h2>
+    Vocabs created during this session: 
+    {% if app.request.hasPreviousSession and app.session.has('voccreated') %}
+        {{ app.session.get('voccreated') }}. Awesome!
+    {% else %}
+        0.
+    {% endif %}
+{% endblock %}

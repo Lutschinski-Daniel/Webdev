@@ -6,12 +6,14 @@
     More to come. ;)
     
     {# Toast erstellen nach erfolgreichem login #}
-    {% for flash_message in app.session.flashBag.get('notice') %}
-        <div id="flashLog">{{ flash_message }}</div>
-    {% endfor %}
-    <script>
-        $("#flashLog").delay(1250).fadeOut(1000).promise(function(){
-           $("#flashLog").remove();
-        });
-    </script>
+    {% if app.request.hasPreviousSession %}
+        {% for flash_message in app.session.flashBag.get('loggedout') %}
+            <div id="flashLog">{{ flash_message }}</div>
+        {% endfor %}
+        <script>
+            $("#flashLog").delay(1250).fadeOut(1000).promise(function(){
+                $("#flashLog").remove();
+            });
+        </script>
+    {% endif %}
 {% endblock %}

@@ -29,7 +29,7 @@ class User {
     protected $name;
     
     /**
-     * @ORM\Column(type="string", length=32)
+     * @ORM\Column(type="string", length=64)
      * 
      * @Assert\NotBlank()
      * @Assert\Type("string")

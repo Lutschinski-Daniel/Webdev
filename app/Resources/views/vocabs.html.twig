@@ -8,22 +8,26 @@
         </div>
     {% endfor%}  
     <br>
-    <div id="newVocab">Add new Vocab!
-        <form id="vocabForm" action="{{ path('create') }}">
-            German:<input type="text" name="german"><br>
-            Foreign: <input type="text" name="foreign">
-            <br>
-            <input type="submit" value="Add">
-        </form> 
-    </div>
-    
+
     {# Toast erstellen nach Vocabelerstellung #}
-    {% for flash_message in app.session.flashBag.get('notice') %}
-        <div id="flashDiv">{{ flash_message }}</div>
-    {% endfor %}
-    <script>
-        $("#flashDiv").delay(2000).fadeOut(1000).promise(function(){
-           $("#flashDiv").remove();
-        });
-    </script>
+    {% if app.request.hasPreviousSession %}
+        {% for flash_message in app.session.flashBag.get('notice') %}
+            <div id="flashDiv">{{ flash_message }}</div>
+        {% endfor %}
+        <script>
+            $("#flashDiv").delay(2000).fadeOut(1000).promise(function () {
+                $("#flashDiv").remove();
+            });
+        </script>
+        {% if app.session.get('user') %}
+            <div id="newVocab">Add new Vocab!
+                <form id="vocabForm" action="{{ path('create') }}">
+                    German:<input type="text" name="german"><br>
+                    Foreign: <input type="text" name="foreign">
+                    <br>
+                    <input type="submit" value="Add">
+                </form> 
+            </div>
+        {% endif %}
+    {% endif %}
 {% endblock %}
