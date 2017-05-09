@@ -38,8 +38,10 @@ blockquote, q {
     quotes:none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before, 
+blockquote:after,
+q:before, 
+q:after {
     content:'';
     content:none;
 }
@@ -207,7 +209,8 @@ div.form-padd{
     padding-top: 150px;
 }
 
-.carousel-control.left, .carousel-control.right {
+.carousel-control.left, 
+.carousel-control.right {
     background-image: none;
 }
 

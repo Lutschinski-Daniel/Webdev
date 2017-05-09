@@ -4,6 +4,9 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Debug\Debug;
+
+require_once 'C:\xampp\htdocs\Symfony\vendor\autoload.php';
 
 class OptionsController extends Controller
 {
