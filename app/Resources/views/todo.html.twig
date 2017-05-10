@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <h1 class="section-heading">Work on TODO's, or add new ones! ;)</h1><br>
+            {% for todo in todos %}
+                <div>
+                    TODO
+                </div>
+            {% endfor%}  
+            <form action="{{ path('todo') }}">
+                <input type="text" name="title" placeholder="Titel" size="32">
+                <input type="text" name="text" placeholder="Beschreibung" size="64">
+                <input class="btn" type="submit" value="Create new">
+            <form>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+{% endblock %}

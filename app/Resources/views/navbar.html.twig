@@ -13,6 +13,7 @@
                 <li><a href='{{ path('home') }}'>Home</a></li>
                 <li><a href='{{ path('about') }}'>About me</a></li>
                 <li><a href='{{ path('projects') }}'>Projects</a></li>
+                <li><a href='{{ path('todo') }}'>Todo's</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if app.request.hasPreviousSession and app.session.has('username') %}

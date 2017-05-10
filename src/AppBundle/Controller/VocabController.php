@@ -12,7 +12,7 @@ class VocabController extends Controller {
      /**
      * @Route ("/projects/vocabs", name="vocabs")
      */
-    public function listVocabsAction(){
+    public function listAction(){
         $vocabs = $this->getDoctrine()->getRepository('AppBundle:Vocab')->findAll();
         
         return $this->render('vocabs.html.twig', [
@@ -23,7 +23,7 @@ class VocabController extends Controller {
     /**
      * @Route ("/projects/vocabs/create", name="create")
      */
-    public function createVocabAction(Request $request) {
+    public function createAction(Request $request) {
         //one possibility to do it
         //$ger = filter_input(INPUT_GET, 'german');
         //$for = filter_input(INPUT_GET, 'foreign');
