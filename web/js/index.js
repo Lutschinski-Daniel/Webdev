@@ -30,3 +30,17 @@ $("div.vocab").hover(
         $(this).css('background-color', '#81c784');
     }
 );
+
+// delete todo
+$(".todo-btn").click(function(){
+    $id = $(this).siblings('.todo-id').text();
+    $(this).parent('div').remove();
+    $.ajax({ 
+        url: 'todo/delete',
+        type: "POST",
+        success: function (response) {
+            $(this).html(response);
+        },
+        data: { "id": $id }
+    });
+});

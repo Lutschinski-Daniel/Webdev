@@ -29,11 +29,6 @@ class Todo {
      * @ORM\Column(type="string", length=64)
      */
     private $text;
-    
-    public function __construct($germanV, $foreignV) {
-        $this->setForeign($foreignV);
-        $this->setGerman($germanV);
-    }
             
     function setId($id) {
         $this->id = $id;

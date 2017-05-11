@@ -235,6 +235,27 @@ a:link {
     padding-left: 15px; 
 }
 
+.create-todo {
+    display: inline-block;
+    padding: 5px;
+    border: black solid 1px;
+    border-radius: 5px;
+    background-color: #81c784;
+}
+
+.todo-div {
+    background-color: #81c784;
+    border: black solid 1px;
+    border-radius: 5px;       
+    padding: 8px;
+    margin: 10px 0;
+}
+
+.todo-title {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
 /* Media query breakpoints */
 
 @media screen and (max-width: 700px){
