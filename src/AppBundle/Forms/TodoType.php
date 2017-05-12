@@ -14,10 +14,24 @@ class TodoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', TextType::class)
-            ->add('text', TextType::class)
-            ->add('save', SubmitType::class, array('label' => 'Add'))
-        ;
+            ->add('title', TextType::class, array(
+                'label' => false,
+                'attr' => array(
+                    'placeholder' => 'Title',
+                    'style' => 'max-width:32em'
+                )
+            ))
+            ->add('text', TextType::class, array(
+                'required' => false,
+                'label' => false,
+                'attr' => array(
+                    'placeholder' => 'Description',
+                    'style' => 'max-width:64em'
+                )
+            ))
+            ->add('save', SubmitType::class, array(
+                'label' => 'Add')
+            );
     }
 
     public function configureOptions(OptionsResolver $resolver) {

@@ -38,8 +38,8 @@ $(".todo-btn").click(function(){
     $.ajax({ 
         url: 'todo/delete',
         type: "POST",
-        success: function (response) {
-            $(this).html(response);
+        fail: function () {
+            alert('Todo could not be deleted');
         },
         data: { "id": $id }
     });

@@ -9,22 +9,17 @@
             {% for todo in todos %}
                 <div class="todo-div">
                     <span class="todo-id" hidden>{{ todo.id }}</span>
-                    <span class="todo-title">{{ todo.title }}:
+                    <span class="todo-title">{{ todo.title }}
                     </span> <span class="todo-text">{{ todo.text }}
                     </span> <button class="todo-btn pull-right">X</button>
                 </div>
             {% endfor%}  
             <br>
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
-            {{ form_end(form) }}
-            <!-- <div class="create-todo">
-                <form action="{{ path('todo') }}">
-                    <input type="text" name="title" placeholder="Titel" size="32">
-                    <input type="text" name="text" placeholder="Beschreibung" size="64">
-                    <input class="btn" type="submit" value="Create new">
-                </form>
-            </div> -->
+            <div class="todo-form">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>
         </div>
         <div class="col-sm-2"></div>
     </div>

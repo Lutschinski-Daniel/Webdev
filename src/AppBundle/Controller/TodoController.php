@@ -25,6 +25,9 @@ class TodoController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $todo = $form->getData();
             
+            if( $todo->getText() == null ){
+                $todo->setText ('');
+            }
             $em = $this->getDoctrine()->getManager();
             $em->persist($todo);
             $em->flush();
@@ -46,6 +49,11 @@ class TodoController extends Controller
         $id = $request->get('id');
         $em = $this->getDoctrine()->getManager();
         $todo = $em->getRepository('AppBundle:Todo')->findOneBy(array('id' => $id));
+        
+        // Check if todo with id was found
+        if( empty($todo) ){
+            return $this->render('todo.html.twig');
+        }
         $em->remove($todo);
         $em->flush();
  

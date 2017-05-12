@@ -256,6 +256,14 @@ a:link {
     font-size: 1.25em;
 }
 
+.todo-form {
+    margin-top: 30px;
+    padding: 15px 15px 0 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #ffe082;
+}
+
 /* Media query breakpoints */
 
 @media screen and (max-width: 700px){
